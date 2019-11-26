@@ -6,11 +6,11 @@
 %% x0: aproximação inicial
 %% x1: aproximação final
 %% erro: erro máximo tolerado
-function secante_18(f, x0, x1, e)
+function secante_18(f, x0, x1, erro)
    x1 = ( (x0 * f(x1)) - (x1 * f(x0)) ) / (f(x1) - f(x0));
-   %ou xi = x1 - f(x0) * (x1 - x0) / (f(x1) - f(x0));
+   %também pode ser xi = x1 - f(x0) * (x1 - x0) / (f(x1) - f(x0));
    i = 0;
-   while ( abs(f(x1)) > e && abs(x1 - x0) > e)
+   while ( abs(f(x1)) > erro && abs(x1 - x0) > erro)
       i++;
       x_temp = x1;
       x1 = ( (x0 * f(x1)) - (x1 * f(x0)) ) / (f(x1) - f(x0));
